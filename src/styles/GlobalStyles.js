@@ -7,7 +7,87 @@ const GlobalStyles = createGlobalStyle`
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 */
 
+/*
+--- 01 TYPOGRAPHY SYSTEM
+
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font weights
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+- Line heights
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+Large: 1.8
+
+- Letter spacing
+-0.5px
+0.75px
+
+
+*/
+
 :root {
+
+  /* Utility classes */
+
+  .text-center {
+    text-align: center;
+  }
+
+  .mb-1 {
+    margin-bottom: var(--space-1);
+  }
+
+  .mb-2 {
+    margin-bottom: var(--space-2);
+  }
+
+  .mb-3 {
+    margin-bottom: var(--space-3);
+  }
+
+  .mb-4 {
+    margin-bottom: var(--space-4);
+  }
+
+  .mb-5 {
+    margin-bottom: var(--space-5);
+  }
+
+  .mb-6 {
+    margin-bottom: var(--space-6);
+  }
+
+  .mb-7 {
+    margin-bottom: var(--space-7);
+  }
+
+  .mb-8 {
+    margin-bottom: var(--space-8);
+  }
+
+  .mb-9 {
+    margin-bottom: var(--space-9);
+  }
+
+  .mb-10 {
+    margin-bottom: var(--space-10);
+  }
+
+  .mb-11 {
+    margin-bottom: var(--space-11);
+  }
+
+  .mb-12 {
+    margin-bottom: var(--space-12);
+  }
   
   &, &.light-mode {
   /* Grey */
@@ -87,6 +167,37 @@ const GlobalStyles = createGlobalStyle`
 --image-opacity: 90%;
 }
 
+/*
+- Screen sizes
+- 544px 34em  phones
+- 704px 44em  small tablets
+- 944px 59em  tablets
+- 1200px 75em  landscape tablets
+- 1344px 84em  small desktops
+*/
+--screen-xs: 34em;
+--screen-sm: 44em;
+--screen-md: 59em;
+--screen-lg: 75em;
+--screen-xl: 84em;
+
+/* 
+Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+  --space-1: 0.2rem;
+  --space-2: 0.4rem;
+  --space-3: 0.8rem;
+  --space-4: 1.2rem;
+  --space-5: 1.6rem;
+  --space-6: 2.4rem;
+  --space-7: 3.2rem;
+  --space-8: 4.8rem;
+  --space-9: 6.4rem;
+  --space-10: 8rem;
+  --space-11: 9.6rem;
+  --space-12: 12.8rem;
+
   --color-brand-50: #5f87a3;
   --color-brand-100: #497596;
   --color-brand-200: #326489;
@@ -97,16 +208,16 @@ const GlobalStyles = createGlobalStyle`
   --color-brand-900: #10324a;
   --color-brand-950: #0e2b3e;
 
-  --color-secondary-50: #fefcf8;
-  --color-secondary-100: #fdfbf6;
-  --color-secondary-200: #fdfbf5;
-  --color-secondary-300: #fdfaf3;
-  --color-secondary-400: #fcfaf2;
+  --color-secondary-50: #f9f6f2;
+  --color-secondary-100: #f5f1eb;
+  --color-secondary-200: #f2ece5;
+  --color-secondary-300: #ece3d7;
+  --color-secondary-400: #e5d9ca;
   --color-secondary-500: #DFD0BD;
-  --color-secondary-600: #e3e0d8;
-  --color-secondary-700: #cac7c0;
-  --color-secondary-800: #b0aea8;
-  --color-secondary-900: #979590;
+  --color-secondary-600: #c9bbaa;
+  --color-secondary-700: #b2a697;
+  --color-secondary-800: #9c9284;
+  --color-secondary-900: #867d71;
 
   --border-radius-tiny: 3px;
   --border-radius-sm: 5px;
@@ -194,6 +305,7 @@ h5,
 h6 {
   overflow-wrap: break-word;
   hyphens: auto;
+  color: var(--color-secondary-300);
 }
 
 img {
