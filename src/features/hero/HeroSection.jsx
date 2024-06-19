@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import HeroImgBox from './HeroImgBox';
 import HeroTextBox from './HeroTextBox';
+import GridLayout from '../../ui/GridLayout';
 
 const StyledHeroSection = styled.section`
   background-color: var(--color-brand-500);
@@ -14,21 +15,14 @@ const Hero = styled.div`
   padding: 0 3.2rem;
 `;
 
-const HeroGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
-  gap: 4.8rem;
-  align-items: center;
-`;
-
 function HeroSection() {
   return (
     <StyledHeroSection>
       <Hero>
-        <HeroGrid>
+        <GridLayout>
           <HeroImgBox />
           <HeroTextBox />
-        </HeroGrid>
+        </GridLayout>
       </Hero>
     </StyledHeroSection>
   );

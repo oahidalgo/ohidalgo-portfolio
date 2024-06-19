@@ -198,9 +198,11 @@ Spacing system (px)
   --space-11: 9.6rem;
   --space-12: 12.8rem;
 
-  --color-brand-50: #5f87a3;
-  --color-brand-100: #497596;
-  --color-brand-200: #326489;
+  --color-brand-50: #8da9be;
+  --color-brand-100: #7698b0;
+  --color-brand-200: #5f87a3;
+  --color-brand-300: #497596;
+  --color-brand-400: #326489;
   --color-brand-500: #1b537c;
   --color-brand-600: #184b70;
   --color-brand-700: #164263;
