@@ -23,7 +23,7 @@ const Heading = styled.h1`
     css`
       font-size: 4.4rem;
       font-weight: 600;
-      margin-bottom: 9.6rem;
+      margin-bottom: 3.2rem;
     `}
 
   ${(props) =>

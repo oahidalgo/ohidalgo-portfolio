@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 import HeroImgBox from './HeroImgBox';
 import HeroTextBox from './HeroTextBox';
 import GridLayout from '../../ui/GridLayout';

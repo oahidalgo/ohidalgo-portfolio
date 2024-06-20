@@ -36,14 +36,10 @@ const ProjectImage = styled.img`
   width: 50%;
 `;
 
-function ProjectImageBox() {
+function ProjectImageBox({ img, alt }) {
   return (
     <StyledProjectImageBox>
-      <ProjectImage
-        src='img/oliver.jpg'
-        alt='iPhone app
-            preferences selection screen'
-      />
+      <ProjectImage src={img} alt={alt} />
     </StyledProjectImageBox>
   );
 }

@@ -5,19 +5,18 @@ import Heading from '../../ui/Heading';
 const StyledNumber = styled.p`
   font-size: 8.6rem;
   font-weight: 600;
-  color: var(--color-brand-500);
+  color: #b5b5b5;
 `;
 
-function ProjectDescription() {
+function ProjectDescription({ index, name, description, link }) {
   return (
-    <div className='step-text-box'>
-      <StyledNumber>01</StyledNumber>
-      <Heading as='h3'>Movies App</Heading>
-      <Paragraph>
-        The app allows you to search for movies, see the details of each one and
-        save them to your favorites list. It was built using React and a
-        third-party API.
-      </Paragraph>
+    <div>
+      <StyledNumber>{String(index + 1).padStart(2, '0')}</StyledNumber>
+      <Heading as='h3'>{name}</Heading>
+      <Paragraph>{description} </Paragraph>
+      <a href={link} target='_blank' rel='noopener noreferrer'>
+        Check it out!
+      </a>
     </div>
   );
 }

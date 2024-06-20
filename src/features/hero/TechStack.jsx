@@ -10,7 +10,9 @@ import styled from 'styled-components';
 
 const StyledTechStack = styled.ul`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 1.6rem;
   list-style: none;
 `;

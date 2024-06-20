@@ -88,6 +88,26 @@ Large: 1.8
   .mb-12 {
     margin-bottom: var(--space-12);
   }
+
+  .gap-xs {
+    gap: var(--space-2);
+  }
+
+  .gap-sm {
+    gap: var(--space-4);
+  }
+
+  .gap-md {
+    gap: var(--space-6);
+  }
+
+  .gap-lg {
+    gap: var(--space-8);
+  }
+
+  .gap-xl {
+    gap: var(--space-10);
+  }
   
   &, &.light-mode {
   /* Grey */

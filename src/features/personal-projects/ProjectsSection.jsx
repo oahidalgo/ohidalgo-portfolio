@@ -1,8 +1,11 @@
 import styled from 'styled-components';
-import GridLayout from '../../ui/GridLayout';
+import GridLayout from '../../ui/FlexLayout';
 import Heading from '../../ui/Heading';
 import ProjectDescription from './ProjectDescription';
 import ProjectImageBox from './ProjectImageBox';
+import Project from './Project';
+import projects from '../../data/projects';
+import Row from '../../ui/Row';
 
 const StyledProjectsSection = styled.section`
   background-color: var(--color-secondary-200);
@@ -17,19 +20,16 @@ const Projects = styled.div`
 
 function ProjectsSection() {
   return (
-    <StyledProjectsSection>
+    <StyledProjectsSection id='projects'>
       <Projects>
         <div>
           <Heading as='h2'>Check some of my personal projects</Heading>
         </div>
-        <GridLayout>
-          <ProjectDescription />
-          <ProjectImageBox />
-          <ProjectImageBox />
-          <ProjectDescription />
-          <ProjectDescription />
-          <ProjectImageBox />
-        </GridLayout>
+        <Row className='gap-xl'>
+          {projects.map((project, index) => (
+            <Project key={index} index={index} project={project} />
+          ))}
+        </Row>
       </Projects>
     </StyledProjectsSection>
   );
