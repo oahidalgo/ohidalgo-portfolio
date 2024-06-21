@@ -3,7 +3,7 @@ const projects = [
     name: 'TheraTime',
     description:
       'TheraTime is a web app that helps people to schedule their therapy sessions. It was built using React, Styled Components and Supabase.',
-    img: 'img/thera-time.webp',
+    img: 'img/fisiotime.PNG',
     alt: 'TheraTime app',
     link: 'https://www.example.com',
   },

@@ -16,8 +16,8 @@ function HeroTextBox() {
       </Heading>
       <HeroDescription>
         I am not limited to the backend; I also have experience developing
-        dynamic interfaces in the frontend, creating reports, and implementing
-        automated tasks.
+        dynamic interfaces in the frontend, implementing automated tasks and
+        creating reports.
       </HeroDescription>
       <HeroDescription className='text-center'>
         My tech stack includes, but is not limited to:

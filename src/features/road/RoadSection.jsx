@@ -1,5 +1,64 @@
-import styled, { keyframes } from 'styled-components';
+import React, { useState, useEffect } from 'react';
+import styled, { keyframes, css } from 'styled-components';
+import { FaTimes } from 'react-icons/fa'; // Importar el icono de cierre de react-icons
 
+// Definir la animación de rebote
+const bounce = keyframes`
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+`;
+
+// Definir la animación de fade in/out para el tooltip
+const fadeInOut = keyframes`
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+`;
+
+// Definir la animación de crecimiento
+const grow = keyframes`
+  0% {
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    width: 99vw;
+    height: 99vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+`;
+
+// Definir la animación de reducción
+const shrink = keyframes`
+  0% {
+    width: 99vw;
+    height: 99vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+`;
+
+// Estilos para el contenedor de la carretera
 const Road = styled.div`
   background-size: cover;
   background-image: url('/img/mountainRoad.webp');
@@ -14,16 +73,7 @@ const Road = styled.div`
   }
 `;
 
-// Definir la animación usando keyframes
-const bounce = keyframes`
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-`;
-
+// Estilos para el contenedor del diamante
 const DiamondContainer = styled.div`
   position: absolute;
   display: flex;
@@ -32,20 +82,13 @@ const DiamondContainer = styled.div`
   animation: ${bounce} 2s infinite;
 `;
 
+// Estilos para la imagen del diamante
 const StyledDiamond = styled.img`
   width: 5.8rem;
   height: 4.8rem;
 `;
 
-const fadeInOut = keyframes`
-  0%, 100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-`;
-
+// Estilos para el tooltip
 const Tooltip = styled.div`
   background-color: var(--color-brand-800);
   color: white;
@@ -59,7 +102,7 @@ const Tooltip = styled.div`
   &::after {
     content: '';
     position: absolute;
-    bottom: -10px; /* Ajustar según sea necesario */
+    bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
     border-width: 5px;
@@ -68,6 +111,7 @@ const Tooltip = styled.div`
   }
 `;
 
+// Estilos para el diamante
 const Diamond = styled.div`
   position: absolute;
   display: flex;
@@ -83,12 +127,73 @@ const Diamond = styled.div`
   }
 `;
 
+// Estilos para el div expansible
+const ExpandingDiv = styled.div`
+  position: fixed;
+  background-color: var(--color-brand-500);
+  z-index: 1000;
+  ${({ isExpanding }) => css`
+    animation: ${isExpanding
+      ? css`
+          ${grow} 2s forwards
+        `
+      : css`
+          ${shrink} 1s forwards
+        `};
+  `}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 99vw;
+  height: 99vh;
+`;
+
+// Estilos para el botón de cierre
+const CloseButton = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const RoadSection = () => {
+  const [isExpanding, setIsExpanding] = useState(false);
+  const [showExpandingDiv, setShowExpandingDiv] = useState(false);
+  const [showCloseButton, setShowCloseButton] = useState(false);
+
   const diamonds = [
     { bottom: '6%', left: '40%', tabletBottom: '4%', tabletLeft: '14%' },
     { bottom: '16%', left: '31%', tabletBottom: '15%', tabletLeft: '2%' },
     { bottom: '27%', left: '38.5%', tabletBottom: '26%', tabletLeft: '9.5%' },
   ];
+
+  const handleDiamondClick = () => {
+    setIsExpanding(true);
+    setShowExpandingDiv(true);
+    document.body.style.overflow = 'hidden'; // Desactivar el scroll
+  };
+
+  const handleCloseClick = () => {
+    setIsExpanding(false);
+    setShowCloseButton(false);
+    setTimeout(() => {
+      setShowExpandingDiv(false);
+      document.body.style.overflow = 'auto'; // Activar el scroll
+    }, 1000); // Espera a que termine la animación antes de ocultar el div
+  };
+
+  useEffect(() => {
+    if (isExpanding) {
+      const timer = setTimeout(() => setShowCloseButton(true), 2000); // Mostrar el botón después de 2 segundos
+      return () => clearTimeout(timer);
+    }
+  }, [isExpanding]);
 
   return (
     <Road id='road'>
@@ -99,11 +204,21 @@ const RoadSection = () => {
           left={pos.left}
           tabletBottom={pos.tabletBottom}
           tabletLeft={pos.tabletLeft}
+          onClick={handleDiamondClick}
         >
           <Tooltip>Click Me!</Tooltip>
           <StyledDiamond src='/img/diamond.png' alt='diamond' />
         </Diamond>
       ))}
+      {showExpandingDiv && (
+        <ExpandingDiv isExpanding={isExpanding}>
+          {showCloseButton && (
+            <CloseButton onClick={handleCloseClick}>
+              <FaTimes size={24} /> {/* Tamaño del icono */}
+            </CloseButton>
+          )}
+        </ExpandingDiv>
+      )}
     </Road>
   );
 };
