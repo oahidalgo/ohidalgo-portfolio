@@ -205,6 +205,7 @@ const RoadSection = () => {
           tabletBottom={pos.tabletBottom}
           tabletLeft={pos.tabletLeft}
           onClick={handleDiamondClick}
+          onTouchStart={handleDiamondClick} // Agregar soporte para eventos táctiles
         >
           <Tooltip>Click Me!</Tooltip>
           <StyledDiamond src='/img/diamond.png' alt='diamond' />
