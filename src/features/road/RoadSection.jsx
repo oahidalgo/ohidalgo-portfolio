@@ -60,16 +60,15 @@ const shrink = keyframes`
 
 // Estilos para el contenedor de la carretera
 const Road = styled.div`
-  background-size: cover;
   background-image: url('/img/mountainRoad.webp');
-  background-position: center;
+  /* fixed width, auto height */
+  background-size: 1920px auto;
   width: 100vw;
-  min-width: 210rem;
-  height: 100rem;
+  height: 1050px;
   position: relative;
 
   @media (max-width: 944px) {
-    background-position: -60.2rem center;
+    background-position: -55rem center;
   }
 `;
 
@@ -168,9 +167,24 @@ const RoadSection = () => {
   const [showCloseButton, setShowCloseButton] = useState(false);
 
   const diamonds = [
-    { bottom: '6%', left: '40%', tabletBottom: '4%', tabletLeft: '14%' },
-    { bottom: '16%', left: '31%', tabletBottom: '15%', tabletLeft: '2%' },
-    { bottom: '27%', left: '38.5%', tabletBottom: '26%', tabletLeft: '9.5%' },
+    {
+      bottom: '85px',
+      left: '800px',
+      tabletBottom: '100px',
+      tabletLeft: '270px',
+    },
+    {
+      bottom: '180px',
+      left: '590px',
+      tabletBottom: '200px',
+      tabletLeft: '40px',
+    },
+    {
+      bottom: '285px',
+      left: '735px',
+      tabletBottom: '310px',
+      tabletLeft: '185px',
+    },
   ];
 
   const handleDiamondClick = () => {
