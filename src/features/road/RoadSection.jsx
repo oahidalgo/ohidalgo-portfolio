@@ -1,30 +1,19 @@
 // RoadSection.js
-import React from 'react';
+import { useState } from 'react';
 import Road from './Road';
 import Diamond from './Diamond';
 import ExpandingDiv from '../../ui/ExpandingDiv';
+import GridLayout from '../../ui/GridLayout';
+import diamonds from '../../data/diamonds';
+import WorkExperience from '../work-exp/WorkExperience';
+import workExperience from '../../data/workExperience';
 
 const RoadSection = () => {
-  const diamonds = [
-    {
-      bottom: '85px',
-      left: '800px',
-      tabletBottom: '100px',
-      tabletLeft: '270px',
-    },
-    {
-      bottom: '180px',
-      left: '590px',
-      tabletBottom: '200px',
-      tabletLeft: '40px',
-    },
-    {
-      bottom: '285px',
-      left: '735px',
-      tabletBottom: '310px',
-      tabletLeft: '185px',
-    },
-  ];
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const handleDiamondClick = (index) => {
+    setSelectedIndex(index);
+  };
 
   return (
     <Road>
@@ -39,9 +28,19 @@ const RoadSection = () => {
             tooltipText='Click Me!'
             imgSrc='/img/diamond.png'
             imgAlt='diamond'
+            onDiamondClick={() => handleDiamondClick(index)}
           />
         ))}
-        <ExpandingDiv.Container />
+        <ExpandingDiv.Container>
+          {selectedIndex !== null && (
+            <WorkExperience
+              company={workExperience[selectedIndex].company}
+              position={workExperience[selectedIndex].position}
+              project={workExperience[selectedIndex].project}
+              description={workExperience[selectedIndex].description}
+            />
+          )}
+        </ExpandingDiv.Container>
       </ExpandingDiv>
     </Road>
   );

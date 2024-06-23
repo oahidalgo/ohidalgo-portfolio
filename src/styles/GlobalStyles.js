@@ -108,7 +108,40 @@ Large: 1.8
   .gap-xl {
     gap: var(--space-10);
   }
+
+  .grid {
+  display: grid;
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
+
+    &--2-cols {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &--3-cols {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+  }
   
+  @media (max-width: 44em) {
+    .grid--3-cols,
+    .grid--4-cols {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 34em) {
+    .grid {
+      row-gap: 4.8rem;
+    }
+
+    .grid--2-cols,
+    .grid--3-cols {      
+      grid-template-columns: 1fr;
+    }
+  }
+
   &, &.light-mode {
   /* Grey */
   --color-grey-0: #fff;

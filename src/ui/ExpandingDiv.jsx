@@ -1,4 +1,3 @@
-// ExpandingDiv.js
 import React, { useState, useEffect, createContext, useContext } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { FaTimes } from 'react-icons/fa';
@@ -58,6 +57,7 @@ const ExpandingDivContainer = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
+  overflow-y: auto; /* Enable scroll inside the modal */
 `;
 
 const CloseButton = styled.button`
@@ -73,6 +73,12 @@ const CloseButton = styled.button`
   align-items: center;
 `;
 
+const ModalContent = styled.div`
+  max-height: 90vh; /* Limit the height of the content to enable internal scroll */
+  overflow-y: auto;
+  padding: 0 3.2rem;
+`;
+
 const ExpandingDiv = ({ children, backgroundColor }) => {
   const [isExpanding, setIsExpanding] = useState(false);
   const [showExpandingDiv, setShowExpandingDiv] = useState(false);
@@ -81,7 +87,7 @@ const ExpandingDiv = ({ children, backgroundColor }) => {
   const handleOpenClick = () => {
     setIsExpanding(true);
     setShowExpandingDiv(true);
-    document.body.style.overflow = 'hidden'; // Disable scroll
+    document.body.style.overflow = 'hidden'; // Disable scroll on the document
   };
 
   const handleCloseClick = () => {
@@ -89,7 +95,7 @@ const ExpandingDiv = ({ children, backgroundColor }) => {
     setShowCloseButton(false);
     setTimeout(() => {
       setShowExpandingDiv(false);
-      document.body.style.overflow = 'auto'; // Enable scroll
+      document.body.style.overflow = 'auto'; // Enable scroll on the document
     }, 1000); // Wait for animation to complete before hiding div
   };
 
@@ -116,7 +122,7 @@ const ExpandingDiv = ({ children, backgroundColor }) => {
   );
 };
 
-const Container = () => {
+const BoxContainer = ({ children }) => {
   const {
     isExpanding,
     showExpandingDiv,
@@ -131,15 +137,18 @@ const Container = () => {
         backgroundColor={backgroundColor}
       >
         {showCloseButton && (
-          <CloseButton onClick={handleCloseClick}>
-            <FaTimes size={24} />
-          </CloseButton>
+          <div>
+            <CloseButton onClick={handleCloseClick}>
+              <FaTimes size={24} />
+            </CloseButton>
+            <ModalContent>{children}</ModalContent>
+          </div>
         )}
       </ExpandingDivContainer>
     )
   );
 };
 
-ExpandingDiv.Container = Container;
+ExpandingDiv.Container = BoxContainer;
 
 export default ExpandingDiv;

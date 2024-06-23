@@ -71,15 +71,22 @@ const Diamond = ({
   tooltipText,
   imgSrc,
   imgAlt,
+  onDiamondClick,
 }) => {
   const { handleOpenClick } = useContext(ExpandingDivContext);
+
+  const handleClick = () => {
+    onDiamondClick();
+    handleOpenClick();
+  };
+
   return (
     <DiamondContainer
       bottom={bottom}
       left={left}
       tabletBottom={tabletBottom}
       tabletLeft={tabletLeft}
-      onClick={handleOpenClick}
+      onClick={handleClick}
     >
       <Tooltip>{tooltipText}</Tooltip>
       <StyledDiamond src={imgSrc} alt={imgAlt} />
