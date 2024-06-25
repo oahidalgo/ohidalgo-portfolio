@@ -10,8 +10,6 @@ const GlobalStyles = createGlobalStyle`
 /*
 --- 01 TYPOGRAPHY SYSTEM
 
-- Font sizes (px)
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 
 - Font weights
 Default: 400
@@ -19,12 +17,7 @@ Medium: 500
 Semi-bold: 600
 Bold: 700
 
-- Line heights
-Default: 1
-Small: 1.05
-Medium: 1.2
-Paragraph default: 1.6
-Large: 1.8
+
 
 - Letter spacing
 -0.5px
@@ -109,6 +102,86 @@ Large: 1.8
     gap: var(--space-10);
   }
 
+  /* - Font sizes (px)
+    10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 
+    / 36 / 44 / 52 / 62 / 74 / 86 / 98 */
+  .font-size-1 {
+    font-size: 1rem;
+  }
+
+  .font-size-2 {
+    font-size: 1.2rem;
+  }
+
+  .font-size-3 {
+    font-size: 1.4rem;
+  }
+
+  .font-size-4 {
+    font-size: 1.6rem;
+  }
+
+  .font-size-5 {
+    font-size: 1.8rem;
+  }
+
+  .font-size-6 {
+    font-size: 2.0rem;
+  }
+
+  .font-size-7 {
+    font-size: 2.4rem;
+  }
+
+  .font-size-8 {
+    font-size: 3.0rem;
+  }
+
+  .font-size-9 {
+    font-size: 3.6rem;
+  }
+
+  .font-size-10 {
+    font-size: 4.4rem;
+  }
+
+  .font-size-11 {
+    font-size: 5.2rem;
+  }
+
+  .font-size-12 {
+    font-size: 6.2rem;
+  }
+
+
+  // Line heights
+  /* Default: 1
+  Small: 1.05
+  Medium: 1.2
+  Paragraph default: 1.6
+  Large: 1.8 */
+
+  .line-height-xs {
+    line-height: 1;
+  }
+
+  .line-height-sm {
+    line-height: 1.05;
+  }
+
+  .line-height-md {
+    line-height: 1.2; 
+  }
+
+  .line-height-lg {
+    line-height: 1.6;
+  }
+
+  .line-height-xl {
+    line-height: 1.8;
+  }
+
+
   .grid {
   display: grid;
   column-gap: 6.4rem;
@@ -143,101 +216,101 @@ Large: 1.8
   }
 
   &, &.light-mode {
-  /* Grey */
-  --color-grey-0: #fff;
-  --color-grey-50: #f9fafb;
-  --color-grey-100: #f3f4f6;
-  --color-grey-200: #e5e7eb;
-  --color-grey-300: #d1d5db;
-  --color-grey-400: #9ca3af;
-  --color-grey-500: #6b7280;
-  --color-grey-600: #4b5563;
-  --color-grey-700: #374151;
-  --color-grey-800: #1f2937;
-  --color-grey-900: #111827;
+    /* Grey */
+    --color-grey-0: #fff;
+    --color-grey-50: #f9fafb;
+    --color-grey-100: #f3f4f6;
+    --color-grey-200: #e5e7eb;
+    --color-grey-300: #d1d5db;
+    --color-grey-400: #9ca3af;
+    --color-grey-500: #6b7280;
+    --color-grey-600: #4b5563;
+    --color-grey-700: #374151;
+    --color-grey-800: #1f2937;
+    --color-grey-900: #111827;
 
-  --color-blue-100: #e0f2fe;
-  --color-blue-700: #0369a1;
-  --color-green-100: #dcfce7;
-  --color-green-700: #15803d;
-  --color-yellow-100: #fef9c3;
-  --color-yellow-700: #a16207;
-  --color-silver-100: #e5e7eb;
-  --color-silver-700: #374151;
-  --color-indigo-100: #e0e7ff;
-  --color-indigo-700: #4338ca;
+    --color-blue-100: #e0f2fe;
+    --color-blue-700: #0369a1;
+    --color-green-100: #dcfce7;
+    --color-green-700: #15803d;
+    --color-yellow-100: #fef9c3;
+    --color-yellow-700: #a16207;
+    --color-silver-100: #e5e7eb;
+    --color-silver-700: #374151;
+    --color-indigo-100: #e0e7ff;
+    --color-indigo-700: #4338ca;
 
-  --color-red-100: #fee2e2;
-  --color-red-700: #b91c1c;
-  --color-red-800: #991b1b;
+    --color-red-100: #fee2e2;
+    --color-red-700: #b91c1c;
+    --color-red-800: #991b1b;
 
-  --backdrop-color: rgba(255, 255, 255, 0.1);
+    --backdrop-color: rgba(255, 255, 255, 0.1);
 
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.12);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.12);
 
-  /* For dark mode */
-  --image-grayscale: 0;
-  --image-opacity: 100%;
+    /* For dark mode */
+    --image-grayscale: 0;
+    --image-opacity: 100%;
   }
-&.dark-mode {
 
---color-grey-0: #18212f;
---color-grey-50: #111827;
---color-grey-100: #1f2937;
---color-grey-200: #374151;
---color-grey-300: #4b5563;
---color-grey-400: #6b7280;
---color-grey-500: #9ca3af;
---color-grey-600: #d1d5db;
---color-grey-700: #e5e7eb;
---color-grey-800: #f3f4f6;
---color-grey-900: #f9fafb;
+  &.dark-mode {
+    --color-grey-0: #18212f;
+    --color-grey-50: #111827;
+    --color-grey-100: #1f2937;
+    --color-grey-200: #374151;
+    --color-grey-300: #4b5563;
+    --color-grey-400: #6b7280;
+    --color-grey-500: #9ca3af;
+    --color-grey-600: #d1d5db;
+    --color-grey-700: #e5e7eb;
+    --color-grey-800: #f3f4f6;
+    --color-grey-900: #f9fafb;
 
---color-blue-100: #075985;
---color-blue-700: #e0f2fe;
---color-green-100: #166534;
---color-green-700: #dcfce7;
---color-yellow-100: #854d0e;
---color-yellow-700: #fef9c3;
---color-silver-100: #374151;
---color-silver-700: #f3f4f6;
---color-indigo-100: #3730a3;
---color-indigo-700: #e0e7ff;
+    --color-blue-100: #075985;
+    --color-blue-700: #e0f2fe;
+    --color-green-100: #166534;
+    --color-green-700: #dcfce7;
+    --color-yellow-100: #854d0e;
+    --color-yellow-700: #fef9c3;
+    --color-silver-100: #374151;
+    --color-silver-700: #f3f4f6;
+    --color-indigo-100: #3730a3;
+    --color-indigo-700: #e0e7ff;
 
---color-red-100: #fee2e2;
---color-red-700: #b91c1c;
---color-red-800: #991b1b;
+    --color-red-100: #fee2e2;
+    --color-red-700: #b91c1c;
+    --color-red-800: #991b1b;
 
---backdrop-color: rgba(0, 0, 0, 0.3);
+    --backdrop-color: rgba(0, 0, 0, 0.3);
 
---shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
---shadow-md: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.3);
---shadow-lg: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.4);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.4);
 
---image-grayscale: 10%;
---image-opacity: 90%;
-}
+    --image-grayscale: 10%;
+    --image-opacity: 90%;
+  }
 
-/*
-- Screen sizes
-- 544px 34em  phones
-- 704px 44em  small tablets
-- 944px 59em  tablets
-- 1200px 75em  landscape tablets
-- 1344px 84em  small desktops
-*/
---screen-xs: 34em;
---screen-sm: 44em;
---screen-md: 59em;
---screen-lg: 75em;
---screen-xl: 84em;
+  /*
+  - Screen sizes
+  - 544px 34em  phones
+  - 704px 44em  small tablets
+  - 944px 59em  tablets
+  - 1200px 75em  landscape tablets
+  - 1344px 84em  small desktops
+  */
+  --screen-xs: 34em;
+  --screen-sm: 44em;
+  --screen-md: 59em;
+  --screen-lg: 75em;
+  --screen-xl: 84em;
 
-/* 
-Spacing system (px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
-*/
+  /* 
+  Spacing system (px)
+  2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+  */
   --space-1: 0.2rem;
   --space-2: 0.4rem;
   --space-3: 0.8rem;
@@ -277,9 +350,7 @@ Spacing system (px)
   --border-radius-tiny: 3px;
   --border-radius-sm: 5px;
   --border-radius-md: 7px;
-  --border-radius-lg: 9px;
-
-  
+  --border-radius-lg: 9px;  
 }
 
 *,

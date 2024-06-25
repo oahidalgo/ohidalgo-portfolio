@@ -4,7 +4,7 @@ import Container from '../../ui/Container';
 
 function WorkExperience({ company, position, project, description }) {
   return (
-    <section>
+    <Container>
       <div>
         <h1>{company}</h1>
         <h2>{position}</h2>
@@ -15,7 +15,7 @@ function WorkExperience({ company, position, project, description }) {
           <Project key={index} project={project} />
         ))}
       </div>
-    </section>
+    </Container>
   );
 }
 
