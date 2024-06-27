@@ -17,7 +17,7 @@ const StyledScrollLink = styled.a`
   &:active,
   &.active:link,
   &.active:visited {
-    color: var(--color-secondary-600);
+    color: var(--color-secondary-900);
   }
 `;
 

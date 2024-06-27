@@ -30,9 +30,6 @@ function Header() {
         <li>
           <ScrollLink to='road'>My Road</ScrollLink>
         </li>
-        {/* <li>
-          <StyledCtaNavLink to='/road'>My Road</StyledCtaNavLink>
-        </li> */}
 
         {/* <li>
         <DarkModeToggle />

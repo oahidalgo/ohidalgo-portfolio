@@ -15,7 +15,7 @@ const Heading = styled.h1`
     css`
       font-size: 5.2rem;
       font-weight: 600;
-      margin-bottom: 3.2rem;
+      margin-bottom: var(--space-7);
 
       @media (max-width: 34em) {
         font-size: 4.4rem;
@@ -27,7 +27,7 @@ const Heading = styled.h1`
     css`
       font-size: 4.4rem;
       font-weight: 600;
-      margin-bottom: 3.2rem;
+      margin-bottom: var(--space-6);
     `}
 
   ${(props) =>
@@ -35,7 +35,7 @@ const Heading = styled.h1`
     css`
       font-size: 3rem;
       font-weight: 500;
-      margin-bottom: 3.2rem;
+      margin-bottom: var(--space-4);
     `}
 
   ${(props) =>

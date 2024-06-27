@@ -22,9 +22,7 @@ function ProjectsSection() {
   return (
     <StyledProjectsSection id='projects'>
       <Projects>
-        <div>
-          <Heading as='h2'>Check some of my personal projects</Heading>
-        </div>
+        <Heading as='h2'>Check some of my personal projects</Heading>
         <Row className='gap-xl'>
           {projects.map((project, index) => (
             <Project key={index} index={index} project={project} />

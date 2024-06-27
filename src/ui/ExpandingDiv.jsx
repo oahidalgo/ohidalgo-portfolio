@@ -76,7 +76,6 @@ const CloseButton = styled.button`
 const ModalContent = styled.div`
   max-height: 90vh; /* Limit the height of the content to enable internal scroll */
   overflow-y: auto;
-  padding: 0 3.2rem;
 `;
 
 const ExpandingDiv = ({ children, backgroundColor }) => {

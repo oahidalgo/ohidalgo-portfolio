@@ -197,14 +197,14 @@ Bold: 700
 
   }
   
-  @media (max-width: 44em) {
+  @media (max-width: 59em) {
     .grid--3-cols,
     .grid--4-cols {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  @media (max-width: 34em) {
+  @media (max-width: 44em) {
     .grid {
       row-gap: 4.8rem;
     }
