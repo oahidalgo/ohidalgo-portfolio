@@ -29,6 +29,13 @@ Bold: 700
 :root {
 
   /* Utility classes */
+  .justify-center {
+    justify-content: center;
+  }
+
+  .align-center {
+    align-items: center;
+  }
 
   .text-center {
     text-align: center;
@@ -185,7 +192,7 @@ Bold: 700
   .grid {
   display: grid;
   column-gap: 6.4rem;
-  row-gap: 9.6rem;
+  row-gap: 6.4rem;
 
     &--2-cols {
       grid-template-columns: repeat(2, 1fr);
@@ -195,6 +202,10 @@ Bold: 700
       grid-template-columns: repeat(3, 1fr);
     }
 
+  }
+
+  .grid-col-span-2 {
+    grid-column: span 2;
   }
   
   @media (max-width: 59em) {

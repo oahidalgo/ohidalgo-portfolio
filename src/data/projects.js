@@ -8,10 +8,9 @@ const projects = [
     link: 'https://fisiotime.netlify.app/',
   },
   {
-    name: 'Project 2',
+    name: 'Movie App',
     description:
-      'This is a project description for project 2 that is a little bit longer than the other ones to see how it behaves with more text. This is a project description for project 2 that is a little bit longer than the other ones to see how it behaves with more text. ',
-    img: 'img/thera-time.webp',
+      'The Movie App is a web app that allows users to search for movies and see their details. It was built using React, Styled Components and The Movie Database API.',
     alt: 'Project 1',
     link: 'https://www.example.com',
   },

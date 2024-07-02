@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Project from './Project';
+import ProjectCard from './ProjectCard';
 import Container from '../../ui/Container';
 import Row from '../../ui/Row';
 import Heading from '../../ui/Heading';
@@ -20,7 +20,7 @@ function WorkExperience({ company, position, project, description }) {
         </Row>
         <div className='grid grid--3-cols'>
           {project.map((project, index) => (
-            <Project key={index} project={project} />
+            <ProjectCard key={index} project={project} />
           ))}
         </div>
       </Row>

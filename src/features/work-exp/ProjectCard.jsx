@@ -4,6 +4,7 @@ import Heading from '../../ui/Heading';
 import Paragraph from '../../ui/Paragraph';
 import TechTag from './TechTag';
 import Row from '../../ui/Row';
+import { useNavigate } from 'react-router-dom';
 
 const ProjectImage = styled.div`
   position: relative;
@@ -33,9 +34,10 @@ const Footer = styled.div`
   margin-top: auto; // Push the footer to the bottom
 `;
 
-function Project({ project }) {
+function ProjectCard({ project }) {
   const { code, name, techStack, summary, imgName } = project;
   const imagePath = `/img/${imgName}`;
+  const navigate = useNavigate();
 
   return (
     <Card>
@@ -53,7 +55,11 @@ function Project({ project }) {
           <Paragraph className='font-size-5'>{summary}</Paragraph>
         </Content>
         <Footer>
-          <a href='#' className='btn btn--full'>
+          <a
+            href='#'
+            className='btn btn--full'
+            onClick={() => navigate(`/project`)}
+          >
             Learn more &rarr;
           </a>
         </Footer>
@@ -62,4 +68,4 @@ function Project({ project }) {
   );
 }
 
-export default Project;
+export default ProjectCard;
