@@ -4,25 +4,37 @@ import Container from '../../ui/Container';
 import Row from '../../ui/Row';
 import Heading from '../../ui/Heading';
 import Paragraph from '../../ui/Paragraph';
+import { useJob } from './useJob';
 
-function WorkExperience({ company, position, project, description }) {
+function WorkExperience() {
+  const { isLoading, error, job } = useJob();
+  // const { company, position, description } = job;
+
+  // if (isLoading) {
+  //   return <p>Loading...</p>;
+  // }
+
+  // if (error) {
+  //   return <p>Something went wrong...</p>;
+  // }
+
   return (
     <Container>
       <Row className='gap-md'>
         <Row>
-          <Heading as='h3' color='secondary-300'>
+          {/* <Heading as='h3' color='secondary-300'>
             {company}
           </Heading>
           <Heading as='h4' color='secondary-300'>
             {position}
           </Heading>
-          <Paragraph color='secondary'>{description}</Paragraph>
+          <Paragraph color='secondary'>{description}</Paragraph> */}
         </Row>
-        <div className='grid grid--3-cols'>
+        {/* <div className='grid grid--3-cols'>
           {project.map((project, index) => (
             <ProjectCard key={index} project={project} />
           ))}
-        </div>
+        </div> */}
       </Row>
     </Container>
   );

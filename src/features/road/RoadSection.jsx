@@ -9,6 +9,7 @@ import WorkExperience from '../work-exp/WorkExperience';
 import workExperience from '../../data/workExperience';
 import Heading from '../../ui/Heading';
 import Container from '../../ui/Container';
+import { Outlet, useNavigate } from 'react-router-dom';
 
 const Road = styled.div`
   background-image: url('/img/mountainRoad.webp');
@@ -26,8 +27,10 @@ const Road = styled.div`
 
 const RoadSection = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const navigate = useNavigate();
 
   const handleDiamondClick = (index) => {
+    navigate(`work-experience/${index + 1}`);
     setSelectedIndex(index);
   };
 
@@ -53,14 +56,15 @@ const RoadSection = () => {
           />
         ))}
         <ExpandingDiv.Container>
-          {selectedIndex !== null && (
+          <Outlet />
+          {/* {selectedIndex !== null && (
             <WorkExperience
               company={workExperience[selectedIndex].company}
               position={workExperience[selectedIndex].position}
               project={workExperience[selectedIndex].project}
               description={workExperience[selectedIndex].description}
             />
-          )}
+          )} */}
         </ExpandingDiv.Container>
       </ExpandingDiv>
     </Road>
