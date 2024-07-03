@@ -46,11 +46,11 @@ function ProjectCard({ project }) {
           <Image src={imagePath} alt={name} />
         </ProjectImage>
         <Content>
-          <ProjectTags>
+          {/* <ProjectTags>
             {techStack.map((tech, index) => (
               <TechTag key={index} tech={tech} />
             ))}
-          </ProjectTags>
+          </ProjectTags> */}
           <Heading as='h4'>{name}</Heading>
           <Paragraph className='font-size-5'>{summary}</Paragraph>
         </Content>
@@ -58,7 +58,7 @@ function ProjectCard({ project }) {
           <a
             href='#'
             className='btn btn--full'
-            onClick={() => navigate(`/project`)}
+            onClick={() => navigate(`project`)}
           >
             Learn more &rarr;
           </a>

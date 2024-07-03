@@ -29,7 +29,7 @@ function App() {
                 path='work-experience/:jobId'
                 element={<WorkExperience />}
               />
-              <Route path='project' element={<ProjectDetail />} />
+              <Route path='project/:projectId' element={<ProjectDetail />} />
             </Route>
           </Route>
           <Route path='*' element={<PageNotFound />} />

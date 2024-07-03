@@ -8,33 +8,32 @@ import { useJob } from './useJob';
 
 function WorkExperience() {
   const { isLoading, error, job } = useJob();
-  // const { company, position, description } = job;
 
-  // if (isLoading) {
-  //   return <p>Loading...</p>;
-  // }
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
 
-  // if (error) {
-  //   return <p>Something went wrong...</p>;
-  // }
+  if (error) {
+    return <p>Something went wrong...</p>;
+  }
 
   return (
     <Container>
       <Row className='gap-md'>
         <Row>
-          {/* <Heading as='h3' color='secondary-300'>
-            {company}
+          <Heading as='h3' color='secondary-300'>
+            {job.company}
           </Heading>
           <Heading as='h4' color='secondary-300'>
-            {position}
+            {job.position}
           </Heading>
-          <Paragraph color='secondary'>{description}</Paragraph> */}
+          <Paragraph color='secondary'>{job.description}</Paragraph>
         </Row>
-        {/* <div className='grid grid--3-cols'>
-          {project.map((project, index) => (
+        <div className='grid grid--3-cols'>
+          {job.projects.map((project, index) => (
             <ProjectCard key={index} project={project} />
           ))}
-        </div> */}
+        </div>
       </Row>
     </Container>
   );
