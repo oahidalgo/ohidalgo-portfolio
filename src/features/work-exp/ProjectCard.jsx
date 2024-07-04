@@ -35,7 +35,7 @@ const Footer = styled.div`
 `;
 
 function ProjectCard({ project }) {
-  const { code, name, techStack, summary, imgName } = project;
+  const { id, name, techStack, summary, imgName } = project;
   const imagePath = `/img/${imgName}`;
   const navigate = useNavigate();
 
@@ -56,9 +56,8 @@ function ProjectCard({ project }) {
         </Content>
         <Footer>
           <a
-            href='#'
             className='btn btn--full'
-            onClick={() => navigate(`project`)}
+            onClick={() => navigate(`/home/project/${id}`)}
           >
             Learn more &rarr;
           </a>

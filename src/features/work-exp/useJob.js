@@ -4,7 +4,6 @@ import { getJob } from '../../services/apiJobs';
 
 export function useJob() {
   const { jobId } = useParams();
-  console.log('EXTRA LARGE', jobId);
 
   const {
     data: job,

@@ -6,6 +6,7 @@ import Row from '../../ui/Row';
 import { HiCheckCircle } from 'react-icons/hi';
 import { useMoveBack } from '../../hooks/useMoveBack';
 import { useProject } from './useProject';
+import Container from '../../ui/Container';
 
 const Task = styled.li`
   color: var(--color-secondary-300);
@@ -27,6 +28,7 @@ const TaskText = styled.span`
 function ProjectDetail() {
   const { project, isLoading, error } = useProject();
   const moveBack = useMoveBack();
+  console.log('project', project);
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -37,31 +39,33 @@ function ProjectDetail() {
   }
 
   return (
-    <Row>
-      <Heading as='h3' color='secondary-300'>
-        {project.name}
-      </Heading>
-      <Paragraph color='secondary'>{project.summary}</Paragraph>
-      <div className='grid grid--3-cols align-center'>
-        <Row>
-          <Heading as='h4' color='secondary-300'>
-            Main Tasks
-          </Heading>
-          {/* <ul>
-            {project.tasks.map((task, index) => (
-              <Task key={index} className='font-size-5'>
-                <CheckIcon />
-                <TaskText>{task}</TaskText>
-              </Task>
-            ))}
-          </ul> */}
-        </Row>
-        <Row className='grid-col-span-2'>
-          <img src={project.diagram} alt={project.name} />
-        </Row>
-      </div>
-      <a onClick={moveBack}>&larr; Back</a>
-    </Row>
+    <Container>
+      <Row>
+        <Heading as='h3' color='secondary-300'>
+          {project.name}
+        </Heading>
+        <Paragraph color='secondary'>{project.summary}</Paragraph>
+        <div className='grid grid--3-cols align-center'>
+          <Row>
+            <Heading as='h4' color='secondary-300'>
+              Main Tasks
+            </Heading>
+            <ul>
+              {project.project_tasks.map((task, index) => (
+                <Task key={index} className='font-size-5'>
+                  <CheckIcon />
+                  <TaskText>{task.description}</TaskText>
+                </Task>
+              ))}
+            </ul>
+          </Row>
+          <Row className='grid-col-span-2'>
+            <img src={project.diagram} alt={project.name} />
+          </Row>
+        </div>
+        <a onClick={moveBack}>&larr; Back</a>
+      </Row>
+    </Container>
   );
 }
 

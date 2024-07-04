@@ -55,7 +55,7 @@ const workExperience = [
           'Developed the process to send grades to Canvas LMS',
         ],
 
-        diagram: 'img/diagrams/professionalServicesBilling.jpg',
+        diagram: '/img/diagrams/professionalServicesBilling.jpg',
         summary: `We reduced the amount of time spent for all parties involved in the process of payroll, invoicing and accounts payable  eliminating reprocessing by integrating academic, finnancial and HR systems.`,
       },
       {

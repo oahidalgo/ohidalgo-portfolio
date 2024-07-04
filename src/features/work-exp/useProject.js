@@ -3,17 +3,15 @@ import { useQuery } from '@tanstack/react-query';
 import { getProject } from '../../services/apiProject';
 
 export function useProject() {
-  //const { id } = useParams();
-
-  const id = 1;
+  const { projectId } = useParams();
 
   const {
     data: project,
     isLoading,
     error,
   } = useQuery({
-    queryKey: ['projects', id],
-    queryFn: () => getProject(id),
+    queryKey: ['projects', projectId],
+    queryFn: () => getProject(projectId),
     retry: false,
   });
 

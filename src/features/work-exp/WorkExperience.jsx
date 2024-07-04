@@ -30,8 +30,8 @@ function WorkExperience() {
           <Paragraph color='secondary'>{job.description}</Paragraph>
         </Row>
         <div className='grid grid--3-cols'>
-          {job.projects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
+          {job.projects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
       </Row>

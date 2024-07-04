@@ -10,7 +10,7 @@ export function usePersonalProjects() {
     isLoading,
     error,
   } = useQuery({
-    queryKey: ['personal-projects'],
+    queryKey: ['personal_projects'],
     queryFn: () => getPersonalProjects(),
     retry: false,
   });

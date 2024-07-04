@@ -1,12 +1,8 @@
-// RoadSection.js
-import { useState } from 'react';
 import styled from 'styled-components';
 
 import Diamond from './Diamond';
 import ExpandingDiv from '../../ui/ExpandingDiv';
 import diamonds from '../../data/diamonds';
-import WorkExperience from '../work-exp/WorkExperience';
-import workExperience from '../../data/workExperience';
 import Heading from '../../ui/Heading';
 import Container from '../../ui/Container';
 import { Outlet, useNavigate } from 'react-router-dom';
@@ -26,12 +22,10 @@ const Road = styled.div`
 `;
 
 const RoadSection = () => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
   const navigate = useNavigate();
 
   const handleDiamondClick = (index) => {
     navigate(`work-experience/${index + 1}`);
-    setSelectedIndex(index);
   };
 
   return (
@@ -41,7 +35,12 @@ const RoadSection = () => {
           My Road
         </Heading>
       </Container>
-      <ExpandingDiv backgroundColor='var(--color-brand-500)'>
+      <ExpandingDiv
+        backgroundColor='var(--color-brand-500)'
+        //Additional onClose behavior, the div should be
+        //in charge of regular onClose behavior
+        onClose={() => navigate('/home')}
+      >
         {diamonds.map((pos, index) => (
           <Diamond
             key={index}
@@ -57,14 +56,6 @@ const RoadSection = () => {
         ))}
         <ExpandingDiv.Container>
           <Outlet />
-          {/* {selectedIndex !== null && (
-            <WorkExperience
-              company={workExperience[selectedIndex].company}
-              position={workExperience[selectedIndex].position}
-              project={workExperience[selectedIndex].project}
-              description={workExperience[selectedIndex].description}
-            />
-          )} */}
         </ExpandingDiv.Container>
       </ExpandingDiv>
     </Road>

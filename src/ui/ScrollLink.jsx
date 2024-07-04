@@ -23,10 +23,8 @@ const StyledScrollLink = styled.a`
 
 function ScrollLink({ to, children }) {
   function handleClick(e) {
-    console.log(to);
     e.preventDefault();
     const target = document.getElementById(to);
-    console.log(target);
     target.scrollIntoView({ behavior: 'smooth' });
   }
 

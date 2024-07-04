@@ -7,8 +7,6 @@ export async function getJob(id) {
     .eq('id', id)
     .single();
 
-  console.log('DATA', data);
-
   if (error) {
     throw new Error(error.message);
   }

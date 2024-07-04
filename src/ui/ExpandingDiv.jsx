@@ -1,6 +1,8 @@
 import React, { useState, useEffect, createContext, useContext } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { FaTimes } from 'react-icons/fa';
+import { useMoveBack } from '../hooks/useMoveBack';
+import { useNavigate } from 'react-router-dom';
 
 export const ExpandingDivContext = createContext();
 
@@ -78,7 +80,7 @@ const ModalContent = styled.div`
   overflow-y: auto;
 `;
 
-const ExpandingDiv = ({ children, backgroundColor }) => {
+const ExpandingDiv = ({ children, backgroundColor, onClose }) => {
   const [isExpanding, setIsExpanding] = useState(false);
   const [showExpandingDiv, setShowExpandingDiv] = useState(false);
   const [showCloseButton, setShowCloseButton] = useState(false);
@@ -92,6 +94,10 @@ const ExpandingDiv = ({ children, backgroundColor }) => {
   const handleCloseClick = () => {
     setIsExpanding(false);
     setShowCloseButton(false);
+    //Only call onClose if it is provided
+    //Additional functionality can be added here
+    //This component is in charge of its own close behavior but can be extended
+    onClose?.();
     setTimeout(() => {
       setShowExpandingDiv(false);
       document.body.style.overflow = 'auto'; // Enable scroll on the document
