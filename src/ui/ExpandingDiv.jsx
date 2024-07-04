@@ -64,8 +64,8 @@ const ExpandingDivContainer = styled.div`
 
 const CloseButton = styled.button`
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 15px;
+  right: 15px;
   background-color: transparent;
   color: white;
   border: none;

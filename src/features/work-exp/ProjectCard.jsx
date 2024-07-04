@@ -5,6 +5,8 @@ import Paragraph from '../../ui/Paragraph';
 import TechTag from './TechTag';
 import Row from '../../ui/Row';
 import { useNavigate } from 'react-router-dom';
+import StyledNavLink from '../../ui/StyledNavLink';
+import { HiArrowSmallRight } from 'react-icons/hi2';
 
 const ProjectImage = styled.div`
   position: relative;
@@ -55,12 +57,9 @@ function ProjectCard({ project }) {
           <Paragraph className='font-size-5'>{summary}</Paragraph>
         </Content>
         <Footer>
-          <a
-            className='btn btn--full'
-            onClick={() => navigate(`/home/project/${id}`)}
-          >
-            Learn more &rarr;
-          </a>
+          <StyledNavLink to={`/home/project/${id}`}>
+            <span>Learn more &rarr;</span>
+          </StyledNavLink>
         </Footer>
       </Row>
     </Card>
