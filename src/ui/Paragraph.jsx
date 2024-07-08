@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Paragraph = styled.p`
-  font-size: 2rem;
+  font-size: var(--font-size-6);
   line-height: 1.6;
   margin-bottom: 1.6rem;
   color: ${({ color }) =>
