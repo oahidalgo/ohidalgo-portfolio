@@ -47,7 +47,7 @@ function ProjectDetail() {
           </Heading>
           <Paragraph color='secondary'>{project.summary}</Paragraph>
           <div className='grid grid--3-cols align-center'>
-            <Row>
+            <Row className='grid-col-span-md-2'>
               <Heading as='h4' color='secondary-300'>
                 Main Tasks
               </Heading>

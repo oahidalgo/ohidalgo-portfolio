@@ -209,6 +209,10 @@ Bold: 700
   }
   
   @media (max-width: 59em) {
+    .grid-col-span-md-2 {
+      grid-column: span 2;
+    }
+
     .grid--3-cols,
     .grid--4-cols {
       grid-template-columns: repeat(2, 1fr);
@@ -218,6 +222,7 @@ Bold: 700
   @media (max-width: 44em) {
     .grid {
       row-gap: 4.8rem;
+      column-gap: 0;
     }
 
     .grid--2-cols,

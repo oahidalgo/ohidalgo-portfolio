@@ -1,8 +1,6 @@
 import React, { useState, useEffect, createContext, useContext } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { FaTimes } from 'react-icons/fa';
-import { useMoveBack } from '../hooks/useMoveBack';
-import { useNavigate } from 'react-router-dom';
 
 export const ExpandingDivContext = createContext();
 
@@ -76,6 +74,7 @@ const CloseButton = styled.button`
 `;
 
 const ModalContent = styled.div`
+  padding: 2.4rem 0;
   max-height: 90vh; /* Limit the height of the content to enable internal scroll */
   overflow-y: auto;
 `;
