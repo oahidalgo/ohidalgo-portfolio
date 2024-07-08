@@ -8,6 +8,10 @@ const HeroImg = styled.img`
   width: 60%;
   border-radius: 50%;
   box-shadow: var(--shadow-lg);
+
+  @media (max-width: 34em) {
+    width: 75%;
+  }
 `;
 
 function HeroImgBox() {

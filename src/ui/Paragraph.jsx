@@ -8,6 +8,10 @@ const Paragraph = styled.p`
     color === 'secondary'
       ? 'var(--color-secondary-300)'
       : 'var(--color-brand-500)'};
+
+  @media (max-width: 34em) {
+    font-size: 1.7rem;
+  }
 `;
 
 export default Paragraph;

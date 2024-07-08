@@ -18,7 +18,7 @@ const Heading = styled.h1`
       margin-bottom: var(--space-7);
 
       @media (max-width: 34em) {
-        font-size: 4.4rem;
+        font-size: 4rem;
       }
     `}
 
