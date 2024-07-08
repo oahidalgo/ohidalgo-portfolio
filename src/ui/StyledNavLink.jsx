@@ -4,14 +4,14 @@ import styled from 'styled-components';
 const StyledNavLink = styled(NavLink)`
   &:link,
   &:visited {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 1.2rem;
 
     color: var(--color-grey-600);
     font-size: 1.6rem;
     font-weight: 500;
-    padding: 1.2rem 2.4rem;
+    padding: 1.2rem 1.6rem;
     transition: all 0.3s;
   }
 

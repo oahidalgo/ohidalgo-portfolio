@@ -1,11 +1,9 @@
 import styled from 'styled-components';
-import GridLayout from '../../ui/FlexLayout';
 import Heading from '../../ui/Heading';
-import ProjectDescription from './ProjectDescription';
-import ProjectImageBox from './ProjectImageBox';
 import Project from './Project';
-import projects from '../../data/projects';
 import Row from '../../ui/Row';
+import Spinner from '../../ui/Spinner';
+
 import { usePersonalProjects } from './usePersonalProjects';
 
 const StyledProjectsSection = styled.section`
@@ -23,7 +21,7 @@ function ProjectsSection() {
   const { personalProjects, isLoading, error } = usePersonalProjects();
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Spinner />;
   }
 
   if (error) {

@@ -4,9 +4,7 @@ import Heading from '../../ui/Heading';
 import Paragraph from '../../ui/Paragraph';
 import TechTag from './TechTag';
 import Row from '../../ui/Row';
-import { useNavigate } from 'react-router-dom';
 import StyledNavLink from '../../ui/StyledNavLink';
-import { HiArrowSmallRight } from 'react-icons/hi2';
 
 const ProjectImage = styled.div`
   position: relative;
@@ -36,33 +34,36 @@ const Footer = styled.div`
   margin-top: auto; // Push the footer to the bottom
 `;
 
+const StyledCard = styled(Card)`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`;
+
 function ProjectCard({ project }) {
   const { id, name, techStack, summary, imgName } = project;
   const imagePath = `/img/${imgName}`;
-  const navigate = useNavigate();
 
   return (
-    <Card>
-      <Row>
-        <ProjectImage>
-          <Image src={imagePath} alt={name} />
-        </ProjectImage>
-        <Content>
-          {/* <ProjectTags>
+    <StyledCard>
+      <ProjectImage>
+        <Image src={imagePath} alt={name} />
+      </ProjectImage>
+      <Content>
+        {/* <ProjectTags>
             {techStack.map((tech, index) => (
               <TechTag key={index} tech={tech} />
             ))}
           </ProjectTags> */}
-          <Heading as='h4'>{name}</Heading>
-          <Paragraph className='font-size-5'>{summary}</Paragraph>
-        </Content>
-        <Footer>
-          <StyledNavLink to={`/home/project/${id}`}>
-            <span>Learn more &rarr;</span>
-          </StyledNavLink>
-        </Footer>
-      </Row>
-    </Card>
+        <Heading as='h4'>{name}</Heading>
+        <Paragraph className='font-size-5'>{summary}</Paragraph>
+      </Content>
+      <Footer>
+        <StyledNavLink to={`/home/project/${id}`}>
+          <span>Learn more &rarr;</span>
+        </StyledNavLink>
+      </Footer>
+    </StyledCard>
   );
 }
 

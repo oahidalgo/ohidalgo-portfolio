@@ -4,10 +4,10 @@ import Heading from '../../ui/Heading';
 import Paragraph from '../../ui/Paragraph';
 import Row from '../../ui/Row';
 import { HiCheckCircle } from 'react-icons/hi';
-import { useMoveBack } from '../../hooks/useMoveBack';
 import { useProject } from './useProject';
 import Container from '../../ui/Container';
 import BackButton from '../../ui/BackButton';
+import Spinner from '../../ui/Spinner';
 
 const Task = styled.li`
   color: var(--color-secondary-300);
@@ -30,7 +30,7 @@ function ProjectDetail() {
   const { project, isLoading, error } = useProject();
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Spinner />;
   }
 
   if (error) {

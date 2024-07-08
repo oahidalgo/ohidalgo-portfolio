@@ -4,13 +4,14 @@ import Container from '../../ui/Container';
 import Row from '../../ui/Row';
 import Heading from '../../ui/Heading';
 import Paragraph from '../../ui/Paragraph';
+import Spinner from '../../ui/Spinner';
 import { useJob } from './useJob';
 
 function WorkExperience() {
   const { isLoading, error, job } = useJob();
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Spinner />;
   }
 
   if (error) {
