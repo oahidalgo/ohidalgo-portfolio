@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const FlexLayout = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 4.8rem;
+  gap: var(--space-8);
   align-items: center;
   justify-content: space-between;
 

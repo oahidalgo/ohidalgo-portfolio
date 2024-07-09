@@ -9,6 +9,14 @@ const HeroImg = styled.img`
   border-radius: 50%;
   box-shadow: var(--shadow-lg);
 
+  @media (max-width: 59em) {
+    width: 75%;
+  }
+
+  @media (max-width: 44em) {
+    width: 60%;
+  }
+
   @media (max-width: 34em) {
     width: 75%;
   }
@@ -19,8 +27,6 @@ function HeroImgBox() {
     <StyledHeroImgBox>
       <picture>
         <source srcSet='img/oliver.jpg' type='image/jpg' />
-        <source srcSet='img/hero-min.png' type='image/png' />
-
         <HeroImg
           src='img/oliver.jpg'
           alt='Oliver Hidalgo, a software engineer specialized in systems integration'

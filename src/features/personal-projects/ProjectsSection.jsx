@@ -1,20 +1,16 @@
 import styled from 'styled-components';
+
 import Heading from '../../ui/Heading';
 import Project from './Project';
 import Row from '../../ui/Row';
 import Spinner from '../../ui/Spinner';
+import Container from '../../ui/Container';
 
 import { usePersonalProjects } from './usePersonalProjects';
 
 const StyledProjectsSection = styled.section`
   background-color: var(--color-secondary-200);
   padding: 4.8rem 0 9.6rem 0;
-`;
-
-const Projects = styled.div`
-  max-width: 120rem;
-  margin: 0 auto;
-  padding: 0 3.2rem;
 `;
 
 function ProjectsSection() {
@@ -30,14 +26,16 @@ function ProjectsSection() {
 
   return (
     <StyledProjectsSection id='projects'>
-      <Projects>
-        <Heading as='h2'>Check some of my personal projects</Heading>
-        <Row className='gap-xl'>
+      <Container>
+        <Heading as='h2' className='mb-8'>
+          Check some of my personal projects
+        </Heading>
+        <Row>
           {personalProjects.map((project, index) => (
             <Project key={index} index={index} project={project} />
           ))}
         </Row>
-      </Projects>
+      </Container>
     </StyledProjectsSection>
   );
 }

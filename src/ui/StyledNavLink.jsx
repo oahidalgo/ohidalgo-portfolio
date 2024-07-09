@@ -1,29 +1,18 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-const StyledNavLink = styled(NavLink)`
-  &:link,
-  &:visited {
-    display: inline-flex;
-    align-items: center;
-    gap: 1.2rem;
+const BaseLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2rem;
 
-    color: var(--color-grey-600);
-    font-size: 1.6rem;
-    font-weight: 500;
-    padding: 1.2rem 1.6rem;
-    transition: all 0.3s;
-  }
+  color: var(--color-grey-500);
+  font-size: 1.6rem;
+  font-weight: 500;
+  transition: all 0.3s;
 
-  &:hover
-  /*   
-  &:active
-  &.active:link,
-  &.active:visited 
-  */ {
-    color: var(--color-grey-800);
-    background-color: var(--color-grey-50);
-    border-radius: var(--border-radius-sm);
+  &:hover {
+    color: var(--color-brand-500);
   }
 
   & svg {
@@ -33,15 +22,16 @@ const StyledNavLink = styled(NavLink)`
     transition: all 0.3s;
   }
 
-  &:hover svg
-  /*
-  ,
-  &:active svg,
-  &.active:link svg,
-  &.active:visited svg
-  */ {
+  &:hover svg {
     color: var(--color-brand-600);
   }
 `;
 
-export default StyledNavLink;
+const StyledNavLink = styled(BaseLink).attrs({ as: NavLink })``;
+
+const StyledExternalLink = styled(BaseLink).attrs({
+  target: '_blank',
+  rel: 'noopener noreferrer',
+})``;
+
+export { StyledNavLink, StyledExternalLink };

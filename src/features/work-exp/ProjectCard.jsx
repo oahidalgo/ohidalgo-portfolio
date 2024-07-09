@@ -4,7 +4,7 @@ import Heading from '../../ui/Heading';
 import Paragraph from '../../ui/Paragraph';
 import TechTag from './TechTag';
 import Row from '../../ui/Row';
-import StyledNavLink from '../../ui/StyledNavLink';
+import { StyledNavLink } from '../../ui/StyledNavLink';
 
 const ProjectImage = styled.div`
   position: relative;

@@ -1,18 +1,11 @@
 import Heading from '../../ui/Heading';
-import styled from 'styled-components';
 import TechStack from './TechStack';
 import Paragraph from '../../ui/Paragraph';
-
-const HeroDescription = styled.p`
-  font-size: 2rem;
-  line-height: 1.6;
-  margin-bottom: 1.6rem;
-`;
 
 function HeroTextBox() {
   return (
     <div>
-      <Heading as='h1' className='mb'>
+      <Heading as='h1'>
         Software Engineer Specialized in Systems Integration
       </Heading>
       <Paragraph color='secondary'>

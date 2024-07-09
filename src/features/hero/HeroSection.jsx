@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import HeroImgBox from './HeroImgBox';
 import HeroTextBox from './HeroTextBox';
 import GridLayout from '../../ui/GridLayout';
@@ -12,6 +13,10 @@ const Hero = styled.div`
   max-width: 130rem;
   margin: 0 auto;
   padding: 0 3.2rem;
+
+  @media (max-width: 44em) {
+    padding: 0 1.8rem;
+  }
 `;
 
 function HeroSection() {

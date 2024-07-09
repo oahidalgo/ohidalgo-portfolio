@@ -11,6 +11,10 @@ export const utilityClasses = `
     text-align: center;
   }
 
+  .text-italic {
+    font-style: italic;
+  }
+
   .mb-1 {
     margin-bottom: var(--space-1);
   }
