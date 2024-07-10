@@ -1,5 +1,5 @@
 // Diamond.js
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { ExpandingDivContext } from '../../ui/ExpandingDiv';
 
@@ -12,26 +12,6 @@ const bounce = keyframes`
   }
 `;
 
-const DiamondContainer = styled.div`
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  bottom: ${({ bottom }) => bottom};
-  left: ${({ left }) => left};
-  animation: ${bounce} 2s infinite;
-
-  @media (max-width: 944px) {
-    bottom: ${({ tabletBottom }) => tabletBottom};
-    left: ${({ tabletLeft }) => tabletLeft};
-  }
-`;
-
-const StyledDiamond = styled.img`
-  width: 5.8rem;
-  height: 4.8rem;
-`;
-
 const fadeIn = keyframes`
   0%, 100% {
     opacity: 0;
@@ -39,6 +19,26 @@ const fadeIn = keyframes`
   50% {
     opacity: 1;
   }
+`;
+
+const DiamondContainer = styled.div`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  bottom: ${({ $bottom }) => $bottom};
+  left: ${({ $left }) => $left};
+  animation: ${bounce} 2s infinite;
+
+  @media (max-width: 944px) {
+    bottom: ${({ $tabletBottom }) => $tabletBottom};
+    left: ${({ $tabletLeft }) => $tabletLeft};
+  }
+`;
+
+const StyledDiamond = styled.img`
+  width: 5.8rem;
+  height: 4.8rem;
 `;
 
 const Tooltip = styled.div`
@@ -59,7 +59,7 @@ const Tooltip = styled.div`
     transform: translateX(-50%);
     border-width: 5px;
     border-style: solid;
-    border-color: black transparent transparent transparent;
+    border-color: var(--color-brand-800) transparent transparent transparent;
   }
 `;
 
@@ -82,10 +82,10 @@ const Diamond = ({
 
   return (
     <DiamondContainer
-      bottom={bottom}
-      left={left}
-      tabletBottom={tabletBottom}
-      tabletLeft={tabletLeft}
+      $bottom={bottom}
+      $left={left}
+      $tabletBottom={tabletBottom}
+      $tabletLeft={tabletLeft}
       onClick={handleClick}
     >
       <Tooltip>{tooltipText}</Tooltip>

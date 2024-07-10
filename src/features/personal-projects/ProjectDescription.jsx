@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+
 import Paragraph from '../../ui/Paragraph';
 import Heading from '../../ui/Heading';
 import { StyledExternalLink } from '../../ui/StyledNavLink';
 
 const StyledNumber = styled.p`
   line-height: 1;
+  margin-bottom: var(--space-3);
   font-size: var(--font-size-12);
   font-weight: 600;
   color: #b5b5b5;

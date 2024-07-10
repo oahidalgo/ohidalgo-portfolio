@@ -40,11 +40,11 @@ const shrink = keyframes`
 
 const ExpandingDivContainer = styled.div`
   position: fixed;
-  background-color: ${({ backgroundColor }) =>
-    backgroundColor || 'var(--color-brand-500)'};
+  background-color: ${({ $backgroundColor }) =>
+    $backgroundColor || 'var(--color-brand-500)'};
   z-index: 1000;
-  ${({ isExpanding }) => css`
-    animation: ${isExpanding
+  ${({ $isExpanding }) => css`
+    animation: ${$isExpanding
       ? css`
           ${grow} 2s forwards
         `
@@ -137,8 +137,8 @@ const BoxContainer = ({ children }) => {
   return (
     showExpandingDiv && (
       <ExpandingDivContainer
-        isExpanding={isExpanding}
-        backgroundColor={backgroundColor}
+        $isExpanding={isExpanding}
+        $backgroundColor={backgroundColor}
       >
         {showCloseButton && (
           <div>

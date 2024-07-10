@@ -1,10 +1,15 @@
 import styled from 'styled-components';
+
 import Card from '../../ui/Card';
 import Heading from '../../ui/Heading';
 import Paragraph from '../../ui/Paragraph';
-import TechTag from './TechTag';
-import Row from '../../ui/Row';
 import { StyledNavLink } from '../../ui/StyledNavLink';
+
+const StyledCard = styled(Card)`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`;
 
 const ProjectImage = styled.div`
   position: relative;
@@ -19,7 +24,7 @@ const Image = styled.img`
 
 const Content = styled.div`
   padding: 0 2.4rem;
-  flex: 1; // Allow the content to grow and take up available space
+  flex: 1;
 `;
 
 const ProjectTags = styled.div`
@@ -32,12 +37,6 @@ const ProjectTags = styled.div`
 const Footer = styled.div`
   padding: 2.4rem;
   margin-top: auto; // Push the footer to the bottom
-`;
-
-const StyledCard = styled(Card)`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
 `;
 
 function ProjectCard({ project }) {

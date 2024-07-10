@@ -10,6 +10,8 @@ import BackButton from '../../ui/BackButton';
 import Spinner from '../../ui/Spinner';
 
 const Task = styled.li`
+  font-size: var(--font-size-5);
+
   color: var(--color-secondary-300);
   margin-bottom: 0.8rem;
   display: flex;
@@ -23,7 +25,7 @@ const CheckIcon = styled(HiCheckCircle)`
 `;
 
 const TaskText = styled.span`
-  line-height: 1.2;
+  line-height: 1.3;
 `;
 
 function ProjectDetail() {
@@ -53,7 +55,7 @@ function ProjectDetail() {
               </Heading>
               <ul>
                 {project.project_tasks.map((task, index) => (
-                  <Task key={index} className='font-size-5'>
+                  <Task key={index}>
                     <CheckIcon />
                     <TaskText>{task.description}</TaskText>
                   </Task>

@@ -9,7 +9,6 @@ import { Outlet, useNavigate } from 'react-router-dom';
 
 const Road = styled.div`
   background-image: url('/img/mountainRoad.webp');
-  /* fixed width, auto height */
   background-size: 1920px auto;
   width: 100vw;
   height: 1050px;
