@@ -3,7 +3,7 @@ import supabase from './supabase';
 export async function getJob(id) {
   const { data, error } = await supabase
     .from('jobs')
-    .select('*, projects(*)')
+    .select('*, projects(*, project_techs(*))')
     .eq('id', id)
     .single();
 

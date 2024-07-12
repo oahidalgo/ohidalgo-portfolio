@@ -6,9 +6,9 @@ const Tag = styled.span`
   font-size: 1.2rem;
   border-radius: 100px;
   font-weight: 600;
-  color: ${(props) => (props.tech === 'ExpressJS' ? '#fff' : 'black')};
+  color: ${(props) => (props.$tech === 'ExpressJS' ? '#fff' : 'black')};
   background-color: ${(props) => {
-    switch (props.tech) {
+    switch (props.$tech) {
       case 'NodeJS':
         return '#8cc84b';
       case 'React':
@@ -44,7 +44,7 @@ const Tag = styled.span`
 `;
 
 function TechTag({ tech }) {
-  return <Tag tech={tech}>{tech}</Tag>;
+  return <Tag $tech={tech}>{tech}</Tag>;
 }
 
 export default TechTag;

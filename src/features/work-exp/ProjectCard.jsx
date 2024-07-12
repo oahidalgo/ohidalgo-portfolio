@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Card from '../../ui/Card';
 import Heading from '../../ui/Heading';
 import Paragraph from '../../ui/Paragraph';
+import TechTag from './TechTag';
 import { StyledNavLink } from '../../ui/StyledNavLink';
 
 const StyledCard = styled(Card)`
@@ -40,7 +41,7 @@ const Footer = styled.div`
 `;
 
 function ProjectCard({ project }) {
-  const { id, name, techStack, summary, imgName } = project;
+  const { id, name, project_techs, summary, imgName } = project;
   const imagePath = `/img/${imgName}`;
 
   return (
@@ -49,11 +50,11 @@ function ProjectCard({ project }) {
         <Image src={imagePath} alt={name} />
       </ProjectImage>
       <Content>
-        {/* <ProjectTags>
-            {techStack.map((tech, index) => (
-              <TechTag key={index} tech={tech} />
-            ))}
-          </ProjectTags> */}
+        <ProjectTags>
+          {project_techs.map((tech) => (
+            <TechTag key={tech.id} tech={tech.name} />
+          ))}
+        </ProjectTags>
         <Heading as='h4'>{name}</Heading>
         <Paragraph className='font-size-5'>{summary}</Paragraph>
       </Content>

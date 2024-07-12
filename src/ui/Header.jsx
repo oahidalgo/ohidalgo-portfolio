@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import ScrollLink from './ScrollLink';
-//import DarkModeToggle from './DarkModeToggle';
 
 const Nav = styled.nav`
   display: flex;
@@ -30,10 +29,6 @@ function Header() {
         <li>
           <ScrollLink to='road'>My Road</ScrollLink>
         </li>
-
-        {/* <li>
-        <DarkModeToggle />
-        </li> */}
       </NavList>
     </Nav>
   );
