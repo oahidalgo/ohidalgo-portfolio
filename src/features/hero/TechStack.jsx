@@ -41,10 +41,10 @@ function TechStack() {
         <TbBrandCSharp stroke='#fff' />
       </TechStackItem>
       <TechStackItem>
-        <DiAngularSimple fill='#dd0031' />
+        <DiReact fill='#61dafb' />
       </TechStackItem>
       <TechStackItem>
-        <DiReact fill='#61dafb' />
+        <DiAngularSimple fill='#dd0031' />
       </TechStackItem>
     </StyledTechStack>
   );
