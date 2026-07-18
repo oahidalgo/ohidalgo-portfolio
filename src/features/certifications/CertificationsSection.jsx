@@ -1,45 +1,61 @@
-import Container from '../../ui/Container';
-import GridLayout from '../../ui/GridLayout';
-import Heading from '../../ui/Heading';
-import Row from '../../ui/Row';
-import Certification from './Certification';
 import styled from 'styled-components';
 
-const StyledCertificationsSection = styled.section`
-  background-color: var(--color-secondary-200);
-  padding: 4.8rem 0 9.6rem 0;
+import { useUI } from '../../hooks/useUI';
+import Certification from './Certification';
+
+const Section = styled.section`
+  background: var(--panel2);
+  transition: background 0.3s;
+`;
+
+const Inner = styled.div`
+  max-width: 112rem;
+  margin: 0 auto;
+  padding: 8.8rem 4rem;
+
+  @media (max-width: 44em) {
+    padding: 5.6rem 1.8rem;
+  }
+`;
+
+const Title = styled.h2`
+  margin: 0 0 3.6rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 3.8rem;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+
+  @media (max-width: 44em) {
+    font-size: 3rem;
+  }
+`;
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.8rem;
+
+  @media (max-width: 59em) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 `;
 
 function CertificationsSection() {
+  const { t } = useUI();
+
   return (
-    <StyledCertificationsSection id='certifications'>
-      <Container>
-        <Heading as='h2'>Certifications</Heading>
-        <GridLayout>
-          <Certification
-            title='CKAD - Certified Kubernetes Application Developer'
-            issuer='The linux foundation'
-            img='ckad.png'
-            alt='Certified Kubernetes Application Developer'
-            link='https://www.credly.com/badges/abdf44fd-5fca-42d4-b871-ebadac693762/public_url'
-          />
-          <Certification
-            title='JSNAD - JavaScript Application Developer'
-            issuer='The linux foundation'
-            img='jsnad.png'
-            alt='JavaScript Application Developer'
-            link='https://www.credly.com/badges/b73b9a07-91e5-473d-9560-94e1c97d12a2/public_url'
-          />
-          <Certification
-            title='SMC - Scrum Master Certified'
-            issuer='SCRUMstudy'
-            img='SMC.png'
-            alt='Scrum Master Certified'
-            link='https://www.scrumstudy.com/certification/verify?type=SMC&number=792150'
-          />
-        </GridLayout>
-      </Container>
-    </StyledCertificationsSection>
+    <Section id='sec-certs'>
+      <Inner data-reveal>
+        <Title>{t.ui.certTitle}</Title>
+        <Grid>
+          {t.certifications.map((cert) => (
+            <Certification key={cert.name} cert={cert} cta={t.ui.certCta} />
+          ))}
+        </Grid>
+      </Inner>
+    </Section>
   );
 }
 

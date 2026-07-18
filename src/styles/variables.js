@@ -58,7 +58,28 @@ export const variables = `
     /* For dark mode */
     --image-grayscale: 0;
     --image-opacity: 100%;
-    
+
+    /* ---- Design system fonts ---- */
+    --font-display: "Space Grotesk", system-ui, sans-serif;
+    --font-body: "Manrope", system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+    /* ---- Design system theme tokens (light) ---- */
+    --bg: #f5f1eb;
+    --panel: #ffffff;
+    --panel2: #ece3d7;
+    --ink: #10324a;
+    --text: #4b5563;
+    --muted: #867d71;
+    --line: rgba(16, 50, 74, 0.14);
+    --accent: #53c8f5;
+    --brand: #1b537c;
+    --btnbg: #10324a;
+    --btnink: #f5f1eb;
+    --header: rgba(245, 241, 235, 0.88);
+    --footerbg: #10324a;
+    --shadow: 0 14px 40px rgba(16, 50, 74, 0.12);
+
 
 
     --color-brand-50: #8da9be;

@@ -1,7 +1,7 @@
-// Diamond.js
-import { useContext } from 'react';
+// Diamond.js — restored to the commit 33c5560 look/behavior (px positioning,
+// bounce, "Click Me!" tooltip). Only the click handler was rewired to the new
+// /experience route (the old ExpandingDiv/Outlet mechanism was removed).
 import styled, { keyframes } from 'styled-components';
-import { ExpandingDivContext } from '../../ui/ExpandingDiv';
 
 const bounce = keyframes`
   0%, 100% {
@@ -26,6 +26,7 @@ const DiamondContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
   bottom: ${({ $bottom }) => $bottom};
   left: ${({ $left }) => $left};
   animation: ${bounce} 2s infinite;
@@ -73,20 +74,13 @@ const Diamond = ({
   imgAlt,
   onDiamondClick,
 }) => {
-  const { handleOpenClick } = useContext(ExpandingDivContext);
-
-  const handleClick = () => {
-    onDiamondClick();
-    handleOpenClick();
-  };
-
   return (
     <DiamondContainer
       $bottom={bottom}
       $left={left}
       $tabletBottom={tabletBottom}
       $tabletLeft={tabletLeft}
-      onClick={handleClick}
+      onClick={onDiamondClick}
     >
       <Tooltip>{tooltipText}</Tooltip>
       <StyledDiamond src={imgSrc} alt={imgAlt} />
